@@ -1,0 +1,44 @@
+body{
+font-family: Arial;
+margin:0;
+padding:0;
+background:#f8f8f8;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:white;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:20px;
+}
+
+nav a{
+text-decoration:none;
+color:black;
+}
+
+.hero{
+text-align:center;
+padding:100px;
+}
+
+.button{
+background:black;
+color:white;
+padding:10px 20px;
+text-decoration:none;
+}
+
+.project{
+background:white;
+margin:40px;
+padding:30px;
+border-radius:8px;
+}
