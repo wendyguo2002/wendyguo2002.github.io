@@ -239,14 +239,11 @@ body.projects-page .project:hover {
 /* ===== SIDEBAR ===== */
 .sidebar {
     position: fixed;
-    left: -160px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: white;
-    padding: 15px;
-    border-radius: 0 10px 10px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    left: 0;
+    top: 40%;
+    background: red;   /* 👈 TEMP */
+    padding: 20px;
+    z-index: 9999;
 }
 
 .sidebar:hover {
