@@ -195,3 +195,11 @@ body.projects-page .project:hover {
     box-shadow: none;
     cursor: default;
 }
+
+.project {
+    scroll-margin-top: 120px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
