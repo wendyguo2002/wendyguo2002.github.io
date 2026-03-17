@@ -1,27 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wenxuan Guo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+<h2>Wenxuan Guo</h2>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="resume.html">Resume</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<h1>Machine Learning Engineer</h1>
+<p>
+MS Computer Science @ UCSD  
+Building ML systems, simulation pipelines, and AI applications.
+</p>
+
+<a class="button" href="projects.html">View Projects</a>
+</section>
+
 <section class="featured">
 
 <h2>Featured Projects</h2>
 
-<a href="projects.html#animal" class="project-link">
 <div class="project">
 <h3>Synthetic Animal Motion Generation</h3>
-
-<p>
-Built an end-to-end pipeline to reconstruct 3D quadruped motion from video using segmentation, skeletonization, and SMAL model fitting. The system converts raw video frames into structured joint trajectories that can be used for simulation and analysis. Integrated the reconstructed motion into a Unity-based animation system to generate realistic synthetic data for radar training.
-</p>
-
+<p>Video → Skeleton → SMAL → 3D motion pipeline for radar simulation.</p>
 </div>
-</a>
 
-<a href="projects.html#radiation" class="project-link">
 <div class="project">
 <h3>Radiation Signal Classification</h3>
-
-<p>
-Developed a real-time machine learning system for classifying gamma-ray waveforms using a convolutional neural network with uncertainty calibration. Engineered temporal features and optimized inference to achieve sub-millisecond latency for streaming data. Integrated the model with Unity and HoloLens to visualize radiation signals in an interactive 3D environment.
-</p>
-
+<p>CNN model for real-time waveform classification with HoloLens visualization.</p>
 </div>
-</a>
+
+<div class="project">
+<h3>AI Portfolio Knowledge Base</h3>
+<p>RAG system using LlamaIndex and ChromaDB.</p>
+</div>
 
 </section>
+
+</body>
+</html>
