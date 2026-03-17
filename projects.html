@@ -7,6 +7,14 @@
 
 <body class="projects-page">
 
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar">
+<a href="#animal">Animal Motion</a>
+<a href="#radiation">Radiation ML</a>
+<a href="#rag">RAG System</a>
+<a href="#pl">PrairieLearn</a>
+</div>
+
 <nav>
 <h2>Wenxuan Guo</h2>
 <ul>
@@ -21,28 +29,31 @@
 
 <h1>Projects</h1>
 
-<!-- ================= PROJECT 1 ================= -->
+<div class="projects-grid">
+
+<!-- ===== PROJECT 1 ===== -->
 <div class="project" id="animal">
 
 <h2>Synthetic Animal Motion Generation</h2>
 
 <p>
-Developed an end-to-end pipeline to reconstruct realistic 3D quadruped motion from monocular video, addressing the limited availability of high-quality motion datasets for radar-based learning systems. The system converts raw video frames into structured joint trajectories by combining segmentation, skeletonization, and SMAL model fitting, enabling consistent recovery of pose and motion over time.
+Developed an end-to-end system that reconstructs realistic 3D quadruped motion from monocular video, addressing the lack of scalable motion datasets for simulation and radar-based learning. The pipeline converts raw video into structured joint trajectories by combining segmentation, skeleton extraction, and SMAL model fitting, enabling consistent motion reconstruction across time.
 </p>
 
 <p>
-The pipeline begins by decomposing videos into frames and extracting animal silhouettes through segmentation. Skeletonization is then applied to capture the structural representation of the animal, followed by 2D keypoint detection to estimate joint locations. These keypoints are used to fit a parametric SMAL model, producing temporally coherent 3D pose sequences suitable for animation and simulation.
+The system processes video frames to extract silhouettes and structural representations, followed by keypoint estimation and parametric model fitting. The resulting motion is exported into a Unity-based animation system, where it can be replayed, controlled, and extended. This creates a full pipeline that bridges perception, modeling, and simulation.
 </p>
 
 <p>
-To bridge perception and simulation, the reconstructed motion is exported as joint trajectories and integrated into a Unity-based motion matching system. This enables controllable animation synthesis, allowing generated motion to be replayed, extended, and reused in downstream applications such as radar simulation and training data generation.
-</p>
-
-<p>
-This approach provides a scalable solution for synthetic motion generation, improving both diversity and controllability compared to real-world datasets. It demonstrates how computer vision pipelines can be tightly coupled with simulation systems to produce high-quality data for machine learning applications.
+This approach enables scalable generation of synthetic motion datasets with higher diversity and controllability than real-world capture, making it valuable for training machine learning systems that depend on structured motion data.
 </p>
 
 <p><b>Tech:</b> Python, PyTorch, OpenCV, Unity, SMAL</p>
+
+<!-- Diagram -->
+<div class="diagram">
+Video → Segmentation → Skeleton → Keypoints → SMAL → 3D Motion → Unity
+</div>
 
 <video controls>
 <source src="assets/videos/motion_demo.mp4" type="video/mp4">
@@ -50,55 +61,55 @@ This approach provides a scalable solution for synthetic motion generation, impr
 
 </div>
 
-<!-- ================= PROJECT 2 ================= -->
+<!-- ===== PROJECT 2 ===== -->
 <div class="project" id="radiation">
 
 <h2>Radiation Signal Classification</h2>
 
 <p>
-Built a real-time machine learning system for classifying gamma-ray waveforms using a convolutional neural network enhanced with uncertainty calibration. The system improves signal discrimination in noisy environments and enables more reliable predictions under ambiguous conditions, outperforming traditional threshold-based methods.
+Built a real-time machine learning system for classifying gamma-ray waveforms using a convolutional neural network with uncertainty calibration. The system improves signal detection in noisy environments and provides reliable predictions even in ambiguous scenarios.
 </p>
 
 <p>
-The model processes temporal waveform signals and learns discriminative patterns that distinguish valid radiation events from noise. In addition to classification, Bayesian uncertainty calibration is incorporated to estimate prediction confidence, improving robustness and reducing false positives in challenging scenarios.
+The model learns temporal patterns from waveform data and incorporates Bayesian uncertainty estimation to improve robustness. The pipeline is optimized for low-latency inference, enabling continuous real-time processing of streaming signals.
 </p>
 
 <p>
-To support real-time deployment, the model architecture and inference pipeline were optimized for low latency, enabling continuous processing of streaming data. The system achieves near real-time performance, making it suitable for applications requiring rapid and reliable signal interpretation.
-</p>
-
-<p>
-The ML pipeline was integrated with Unity and deployed to HoloLens, enabling interactive 3D visualization of radiation signals. Users can observe radiation hotspots and signal patterns in an augmented reality environment, improving interpretability and usability in real-world operational settings.
+Integrated with Unity and deployed to HoloLens, the system visualizes radiation signals in an interactive 3D environment, allowing users to intuitively explore signal patterns and spatial distributions.
 </p>
 
 <p><b>Tech:</b> PyTorch, Unity, HoloLens, C#</p>
+
+<div class="diagram">
+Waveform → CNN → Classification + Uncertainty → Unity → AR Visualization
+</div>
 
 <img src="assets/images/radiation_demo.png">
 
 </div>
 
-<!-- ================= PROJECT 3 ================= -->
-<div class="project">
+<!-- ===== PROJECT 3 ===== -->
+<div class="project" id="rag">
 
 <h2>AI Portfolio Knowledge Base</h2>
 
 <p>
-Designed a retrieval-augmented generation (RAG) system that transforms static professional documents into a structured and queryable knowledge base. The system allows users to ask complex technical and behavioral questions and receive context-aware responses by combining semantic retrieval with large language model generation.
+Designed a retrieval-augmented generation system that transforms static documents into a structured, queryable knowledge base. The system enables semantic search and context-aware response generation for technical and behavioral queries.
 </p>
 
 <p>
-A semantic ingestion pipeline was developed to process documents into structured chunks while preserving contextual relationships. Task-aware chunking strategies were applied to maintain coherence across retrieval boundaries, improving the quality and relevance of retrieved information.
+Built a document ingestion pipeline with structured chunking and embedding-based retrieval using ChromaDB. Combined retrieval with LLM-based generation to produce structured and coherent responses.
 </p>
 
 <p>
-The system uses embedding-based retrieval with ChromaDB to identify relevant content, followed by prompt-engineered generation to synthesize structured responses. Additional constraints were introduced to enforce consistent output formats and reduce hallucination, improving reliability for real-world use.
-</p>
-
-<p>
-This approach enables efficient knowledge access and significantly improves response relevance compared to keyword-based search. It is particularly useful for interview preparation and structured information retrieval, demonstrating practical applications of LLM-based systems.
+Optimized prompt design and retrieval strategies to improve response consistency and reduce hallucination, enabling reliable information access for real-world use cases such as interview preparation.
 </p>
 
 <p><b>Tech:</b> LlamaIndex, ChromaDB, Transformers</p>
+
+<div class="diagram">
+Documents → Chunking → Embeddings → Retrieval → LLM → Structured Response
+</div>
 
 <p>
 <a href="https://github.com/wendyguo2002" target="_blank">
@@ -108,28 +119,30 @@ GitHub Repository
 
 </div>
 
-<!-- ================= PROJECT 4 ================= -->
-<div class="project">
+<!-- ===== PROJECT 4 ===== -->
+<div class="project" id="pl">
 
 <h2>PrairieLearn Feedback Engine</h2>
 
 <p>
-Developed an automated feedback system for proof-block ordering problems within a large-scale educational platform. The system analyzes the logical structure of student submissions and provides structured feedback to help users understand correctness and reasoning.
+Developed an automated feedback system for proof-block ordering problems, enabling structured and scalable evaluation of logical reasoning in large classrooms.
 </p>
 
 <p>
-The backend system evaluates the ordering of proof blocks and assigns semantic tags representing logical relationships and correctness. This enables deterministic feedback generation that goes beyond simple correctness checks, offering meaningful guidance to students.
+The system analyzes student submissions, identifies logical ordering errors, and generates deterministic feedback based on rule-based evaluation. It provides meaningful guidance rather than simple correctness checks.
 </p>
 
 <p>
-The system was integrated into PrairieLearn using a Python backend and a frontend interface that delivers real-time feedback during problem-solving. The design emphasizes modularity and extensibility, allowing future integration of more advanced reasoning systems.
-</p>
-
-<p>
-Deployed to over 800 students, the system significantly reduced manual grading workload while improving learning outcomes. It demonstrates how automated feedback systems can enhance scalability and effectiveness in education.
+Deployed to 800+ students, the system significantly reduced grading workload while improving learning outcomes through immediate and structured feedback.
 </p>
 
 <p><b>Tech:</b> Python, Mustache.js</p>
+
+<div class="diagram">
+Student Input → Rule Engine → Logical Analysis → Feedback Generation
+</div>
+
+</div>
 
 </div>
 

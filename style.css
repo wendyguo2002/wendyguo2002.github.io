@@ -203,3 +203,60 @@ body.projects-page .project:hover {
 html {
     scroll-behavior: smooth;
 }
+
+/* ===== GRID LAYOUT ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 20px 80px;
+}
+
+/* ===== PROJECT CARD ===== */
+.project {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* remove hover on project page */
+body.projects-page .project:hover {
+    transform: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* ===== DIAGRAM ===== */
+.diagram {
+    margin: 15px 0;
+    padding: 12px;
+    background: #f4f6f8;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    position: fixed;
+    left: -160px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 15px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.sidebar:hover {
+    left: 0;
+}
+
+.sidebar a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
