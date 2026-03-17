@@ -2,7 +2,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     margin: 0;
-    background: #f9fafb;
+    background: linear-gradient(to bottom, #f9fafb, #eef2f7);
     color: #111;
 }
 
@@ -12,13 +12,16 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
-    background: white;
-    border-bottom: 1px solid #eee;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
 }
 
 nav h2 {
     margin: 0;
     font-size: 20px;
+    font-weight: 600;
 }
 
 nav ul {
@@ -31,21 +34,35 @@ nav a {
     text-decoration: none;
     color: #444;
     font-weight: 500;
+    position: relative;
 }
 
-nav a:hover {
-    color: #0077ff;
+/* underline animation */
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background: #0077ff;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 /* ===== HERO ===== */
 .hero {
     text-align: center;
-    padding: 100px 20px 60px;
+    padding: 120px 20px 80px;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 52px;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .hero p {
@@ -57,49 +74,68 @@ nav a:hover {
 
 /* ===== PROFILE IMAGE ===== */
 .profile {
-    width: 140px;
+    width: 150px;
     border-radius: 50%;
     margin-bottom: 20px;
+    border: 4px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* ===== BUTTON ===== */
 .button {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 26px;
-    background: #111;
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #0077ff, #00c6ff);
     color: white;
     border-radius: 8px;
     text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
 }
 
 .button:hover {
-    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,119,255,0.3);
 }
 
 /* ===== SECTION ===== */
 section {
     max-width: 1000px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 /* ===== PROJECT CARDS ===== */
 .project {
     background: white;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 30px;
+    border-radius: 16px;
     border: 1px solid #eee;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+/* subtle gradient border effect */
+.project::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(135deg, #0077ff, #00c6ff);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
 }
 
 .project:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
-.project h3, .project h2 {
+.project h2, .project h3 {
     margin-top: 0;
 }
 
@@ -107,29 +143,29 @@ section {
     color: #555;
 }
 
-/* ===== IMAGES / VIDEOS ===== */
+/* ===== MEDIA ===== */
 img, video {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
     margin-top: 15px;
-}
-
-/* ===== HEADINGS ===== */
-h1 {
-    text-align: center;
-    margin-top: 40px;
-}
-
-h2 {
-    margin-top: 40px;
 }
 
 /* ===== ABOUT PAGE ===== */
 .about {
-    max-width: 800px;
+    max-width: 750px;
     margin: auto;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 17px;
     color: #444;
+}
+
+.about h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about h2 {
+    margin-top: 35px;
 }
 
 /* ===== LINKS ===== */
