@@ -1,38 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Projects</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="projects-page">
+
+<nav>
+<h2>Wenxuan Guo</h2>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="resume.html">Resume</a></li>
+</ul>
+</nav>
+
+<section>
+
+<h1>Projects</h1>
+
+<!-- ================= PROJECT 1 ================= -->
 <div class="project" id="animal">
 
 <h2>Synthetic Animal Motion Generation</h2>
 
 <p>
-Developed an end-to-end pipeline to reconstruct realistic 3D quadruped motion from monocular video, addressing the scarcity of high-quality motion data for radar-based learning systems. The system converts raw video frames into structured joint trajectories that can be used for simulation, modeling, and downstream machine learning tasks. Integrated the reconstructed motion into a Unity-based animation system to generate controllable and scalable synthetic datasets.
+Developed an end-to-end pipeline to reconstruct realistic 3D quadruped motion from monocular video, addressing the limited availability of high-quality motion datasets for radar-based learning systems. The pipeline converts raw video frames into structured joint trajectories by combining segmentation, skeletonization, and SMAL model fitting. The reconstructed motion is then integrated into a Unity-based animation system to generate controllable and scalable synthetic motion data.
+</p>
+
+<p>
+The system bridges computer vision and simulation by enabling a full workflow from perception to animation, allowing generated motion sequences to be reused for training and evaluation. This approach improves data diversity and provides a practical solution for generating synthetic datasets in scenarios where real-world collection is expensive or infeasible.
 </p>
 
 <p><b>Tech:</b> Python, PyTorch, OpenCV, Unity, SMAL</p>
-
-<h3>Problem</h3>
-<p>
-Real-world animal motion data is difficult and expensive to capture, especially for radar-based simulation where labeled motion sequences are limited. Existing datasets lack diversity and controllability, making it hard to train robust models.
-</p>
-
-<h3>Approach</h3>
-<p>
-Designed a multi-stage pipeline that begins with video decomposition into frames, followed by segmentation to extract animal silhouettes. Applied skeletonization to recover structural geometry and detect keypoints representing anatomical joints. These 2D keypoints are then used to fit a SMAL model, producing temporally consistent 3D pose sequences. The resulting motion is represented as joint trajectories and integrated into a Unity motion matching system for animation synthesis.
-</p>
-
-<h3>Key Contributions</h3>
-<p>
-- Designed the full video-to-3D reconstruction pipeline<br>
-- Implemented skeleton extraction and keypoint detection<br>
-- Integrated SMAL model fitting for 3D pose recovery<br>
-- Built Unity-based motion system for animation generation
-</p>
-
-<h3>Result</h3>
-<p>
-Successfully generated realistic quadruped motion sequences and enabled controllable animation within a simulation pipeline. This approach provides a scalable solution for synthetic motion data generation, supporting radar training and simulation tasks.
-</p>
 
 <video controls>
 <source src="assets/videos/motion_demo.mp4" type="video/mp4">
 </video>
 
 </div>
+
+<!-- ================= PROJECT 2 ================= -->
+<div class="project" id="radiation">
+
+<h2>Radiation Signal Classification</h2>
+
+<p>
+Built a real-time machine learning system for classifying gamma-ray waveforms using a convolutional neural network with uncertainty calibration. The system improves signal discrimination in noisy environments and supports continuous low-latency inference for streaming data. By combining learned features with probabilistic calibration, the model provides more reliable predictions than traditional threshold-based methods.
+</p>
+
+<p>
+The pipeline was optimized for performance and integrated with Unity and HoloLens to enable interactive 3D visualization of radiation signals. This allows users to observe detected radiation patterns in an augmented reality environment, improving interpretability and real-world usability of the system.
+</p>
+
+<p><b>Tech:</b> PyTorch, Unity, HoloLens, C#</p>
+
+<img src="assets/images/radiation_demo.png">
+
+</div>
+
+<!-- ================= PROJECT 3 ================= -->
+<div class="project">
+
+<h2>AI Portfolio Knowledge Base</h2>
+
+<p>
+Designed a retrieval-augmented generation (RAG) system that transforms static professional documents into a queryable knowledge base. The system enables users to ask complex technical and behavioral questions and receive structured, context-aware responses by combining semantic retrieval with large language model generation.
+</p>
+
+<p>
+Implemented a semantic ingestion pipeline with task-aware chunking and embedding-based retrieval using ChromaDB. The system improves response relevance and consistency while maintaining low latency, making it useful for interview preparation and structured knowledge access.
+</p>
+
+<p><b>Tech:</b> LlamaIndex, ChromaDB, Transformers</p>
+
+<p>
+<a href="https://github.com/wendyguo2002" target="_blank">
+GitHub Repository
+</a>
+</p>
+
+</div>
+
+<!-- ================= PROJECT 4 ================= -->
+<div class="project">
+
+<h2>PrairieLearn Feedback Engine</h2>
+
+<p>
+Developed an automated feedback system for proof-block ordering problems within a large-scale educational platform. The system analyzes the logical structure of student submissions and provides deterministic, structured feedback to help users understand correctness and reasoning.
+</p>
+
+<p>
+Integrated the feedback engine into PrairieLearn with a Python backend and frontend components, enabling real-time response generation for 800+ students. The system improves scalability of grading workflows while enhancing learning outcomes by providing immediate, structured guidance.
+</p>
+
+<p><b>Tech:</b> Python, Mustache.js</p>
+
+</div>
+
+</section>
+
+</body>
+</html>
