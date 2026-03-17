@@ -1,45 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Projects</title>
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body class="projects-page">
-
-<nav>
-<h2>Wenxuan Guo</h2>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="resume.html">Resume</a></li>
-</ul>
-</nav>
-
-<section>
-
-<h1>Projects</h1>
-
-<!-- ================= PROJECT 1 ================= -->
 <div class="project" id="animal">
 
 <h2>Synthetic Animal Motion Generation</h2>
 
 <p>
-Built an end-to-end pipeline to reconstruct 3D quadruped motion from video using segmentation, skeletonization, and SMAL model fitting. The system transforms raw video frames into structured joint trajectories suitable for simulation and analysis. Integrated the reconstructed motion into a Unity-based animation system to generate realistic synthetic motion data for radar training.
+Developed an end-to-end pipeline to reconstruct realistic 3D quadruped motion from monocular video, addressing the scarcity of high-quality motion data for radar-based learning systems. The system converts raw video frames into structured joint trajectories that can be used for simulation, modeling, and downstream machine learning tasks. Integrated the reconstructed motion into a Unity-based animation system to generate controllable and scalable synthetic datasets.
 </p>
 
 <p><b>Tech:</b> Python, PyTorch, OpenCV, Unity, SMAL</p>
 
+<h3>Problem</h3>
+<p>
+Real-world animal motion data is difficult and expensive to capture, especially for radar-based simulation where labeled motion sequences are limited. Existing datasets lack diversity and controllability, making it hard to train robust models.
+</p>
+
 <h3>Approach</h3>
 <p>
-Video frames are first processed through segmentation to extract animal silhouettes, followed by skeletonization to recover structural shape. 2D keypoints are then detected and used to fit a SMAL model, producing temporally consistent 3D pose sequences. The resulting motion is exported as joint trajectories and used in Unity for motion matching and animation synthesis.
+Designed a multi-stage pipeline that begins with video decomposition into frames, followed by segmentation to extract animal silhouettes. Applied skeletonization to recover structural geometry and detect keypoints representing anatomical joints. These 2D keypoints are then used to fit a SMAL model, producing temporally consistent 3D pose sequences. The resulting motion is represented as joint trajectories and integrated into a Unity motion matching system for animation synthesis.
+</p>
+
+<h3>Key Contributions</h3>
+<p>
+- Designed the full video-to-3D reconstruction pipeline<br>
+- Implemented skeleton extraction and keypoint detection<br>
+- Integrated SMAL model fitting for 3D pose recovery<br>
+- Built Unity-based motion system for animation generation
 </p>
 
 <h3>Result</h3>
 <p>
-Successfully generated realistic quadruped motion sequences and enabled controllable animation within a simulation pipeline. This provides a scalable way to produce synthetic motion datasets for radar-based learning systems.
+Successfully generated realistic quadruped motion sequences and enabled controllable animation within a simulation pipeline. This approach provides a scalable solution for synthetic motion data generation, supporting radar training and simulation tasks.
 </p>
 
 <video controls>
@@ -47,85 +36,3 @@ Successfully generated realistic quadruped motion sequences and enabled controll
 </video>
 
 </div>
-
-<!-- ================= PROJECT 2 ================= -->
-<div class="project" id="radiation">
-
-<h2>Radiation Signal Classification</h2>
-
-<p>
-Developed a real-time machine learning system for classifying gamma-ray waveforms using a convolutional neural network with uncertainty calibration. The system improves signal discrimination and supports continuous streaming inference with low latency. Integrated with Unity and HoloLens to visualize radiation signals in an interactive 3D environment.
-</p>
-
-<p><b>Tech:</b> PyTorch, Unity, HoloLens, C#</p>
-
-<h3>Approach</h3>
-<p>
-Extracted temporal features from waveform signals and trained a CNN to classify signal vs noise. Applied Bayesian uncertainty calibration to improve robustness in ambiguous cases. Optimized the model architecture and inference pipeline to meet real-time constraints.
-</p>
-
-<h3>Result</h3>
-<p>
-Achieved high-precision signal classification with significantly improved signal-to-noise ratio. Reduced detection latency and enabled interactive visualization of radiation hotspots in AR.
-</p>
-
-<img src="assets/images/radiation_demo.png">
-
-</div>
-
-<!-- ================= PROJECT 3 ================= -->
-<div class="project">
-
-<h2>AI Portfolio Knowledge Base</h2>
-
-<p>
-Designed a retrieval-augmented generation (RAG) system that transforms static professional documents into a queryable knowledge base. The system enables structured responses to technical and behavioral queries using semantic retrieval and LLM-based synthesis.
-</p>
-
-<p><b>Tech:</b> LlamaIndex, ChromaDB, Transformers</p>
-
-<h3>Approach</h3>
-<p>
-Built a semantic ingestion pipeline with task-aware chunking to preserve context across complex queries. Used embedding-based retrieval to identify relevant information and combined it with prompt-engineered generation for structured outputs.
-</p>
-
-<h3>Result</h3>
-<p>
-Improved retrieval quality and response consistency, enabling efficient querying of personal knowledge for interview preparation and information access.
-</p>
-
-<p>
-<a href="https://github.com/wendyguo2002" target="_blank">
-GitHub Repository
-</a>
-</p>
-
-</div>
-
-<!-- ================= PROJECT 4 ================= -->
-<div class="project">
-
-<h2>PrairieLearn Feedback Engine</h2>
-
-<p>
-Built an automated feedback system for proof-block ordering problems used in a large-scale educational platform. The system provides deterministic, structured feedback to help students understand logical ordering in proofs.
-</p>
-
-<p><b>Tech:</b> Python, Mustache.js</p>
-
-<h3>Approach</h3>
-<p>
-Designed a rule-based feedback engine that analyzes block ordering and assigns tags representing logical correctness. Integrated the system into PrairieLearn with a frontend interface for real-time feedback delivery.
-</p>
-
-<h3>Result</h3>
-<p>
-Deployed to 800+ students, reducing manual grading effort and improving structured learning outcomes in proof-based courses.
-</p>
-
-</div>
-
-</section>
-
-</body>
-</html>
