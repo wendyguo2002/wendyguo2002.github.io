@@ -250,7 +250,7 @@ body.projects-page .project:hover {
 }
 
 .sidebar:hover {
-    left: 0;
+    left: 20;
 }
 
 .sidebar a {
