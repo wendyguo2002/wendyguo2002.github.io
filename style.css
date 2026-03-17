@@ -177,3 +177,21 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.project-link .project:hover {
+    transform: translateY(-6px);
+    cursor: pointer;
+}
+
+/* disable hover effect on projects page */
+body.projects-page .project:hover {
+    transform: none;
+    box-shadow: none;
+    cursor: default;
+}
