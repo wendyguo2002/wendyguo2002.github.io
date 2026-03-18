@@ -239,21 +239,25 @@ body.projects-page .project:hover {
 }
 
 /* ===== SIDEBAR (hidden edge trigger) ===== */
+/* ===== SIDEBAR (full height, slim) ===== */
 .sidebar {
     position: fixed;
-    left: -220px;                 /* hidden off screen */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 220px;
-    background: white;
-    padding: 20px 15px;
-    border-radius: 0 16px 16px 0;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    left: -140px;              /* hidden but partially reachable */
+    top: 0;
+    height: 100vh;             /* 👈 full height */
+    width: 140px;              /* 👈 slim width */
+    
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+
+    padding-top: 120px;        /* space from top (below nav feel) */
+    
+    box-shadow: 4px 0 20px rgba(0,0,0,0.08);
     transition: 0.35s ease;
     z-index: 1000;
 }
 
-/* invisible hover trigger area */
+/* hover trigger area */
 .sidebar::before {
     content: "";
     position: absolute;
@@ -263,19 +267,19 @@ body.projects-page .project:hover {
     height: 100%;
 }
 
-/* show when hovering edge */
+/* slide in */
 .sidebar:hover {
     left: 0;
 }
 
-/* links */
+/* links (vertical spacing) */
 .sidebar a {
     display: block;
-    padding: 12px 14px;
-    margin: 10px 0;
+    padding: 14px 16px;
+    margin: 12px 0;
     text-decoration: none;
-    color: #333;
-    font-size: 15px;
+    color: #444;
+    font-size: 14px;
     border-radius: 10px;
     transition: all 0.2s ease;
 }
@@ -284,5 +288,5 @@ body.projects-page .project:hover {
 .sidebar a:hover {
     background: #eef2ff;
     color: #2a5cff;
-    transform: translateX(5px);
+    transform: translateX(4px);
 }
