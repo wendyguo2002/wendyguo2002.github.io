@@ -76,6 +76,8 @@ nav a:hover::after {
 /* ===== PROFILE IMAGE ===== */
 .profile {
     width: 150px;
+    height: 150px;          /* 👈 force square */
+    object-fit: cover;      /* 👈 crop nicely */
     border-radius: 50%;
     margin-bottom: 20px;
     border: 4px solid white;
