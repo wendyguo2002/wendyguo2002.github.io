@@ -16,9 +16,9 @@ document.querySelectorAll('[data-year]').forEach((node) => {
 const typewriter = document.querySelector('[data-typewriter]');
 if (typewriter && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const phrases = [
-    'building physically grounded simulations.',
-    'connecting graphics, RF, and machine learning.',
-    'turning synthetic data into real-world sensing systems.'
+    'simulation.',
+    'learning from physics.',
+    'sensing beyond cameras.'
   ];
   let phraseIndex = 0;
   let charIndex = phrases[0].length;
