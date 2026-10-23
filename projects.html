@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Research and engineering projects by Wenxuan Guo in RF simulation, sensing, and AI systems.">
   <title>Projects · Wenxuan Guo</title>
-  <link rel="stylesheet" href="style.css?v=20261022-3"><script src="script.js?v=20261022-3" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261022-4"><script src="script.js?v=20261022-4" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -15,13 +15,13 @@
       <p class="eyebrow">Research &amp; engineering</p>
       <h1>Research &amp; Projects</h1>
       <p>Current research in RF simulation and synthetic data, together with selected systems and learning-tool projects.</p>
-      <div class="anchor-nav" aria-label="Project sections"><a href="#radar-synthesis">Radar synthesis</a><a href="#graphics-rf">Graphics-to-RF</a><a href="#other-projects">Other projects</a><a href="#outputs">Outputs</a></div>
+      <div class="anchor-nav" aria-label="Project sections"><a href="#radar-synthesis">Radar data synthesis</a><a href="#graphics-rf">RF materials</a><a href="#publications">Publications &amp; presentations</a><a href="#other-projects">Other projects</a></div>
     </section>
 
     <section class="section-shell project-detail project-detail-dark reveal" id="radar-synthesis">
       <div class="project-detail-copy">
-        <p class="eyebrow">Featured research · 01</p><h2>Physics-Based Radar Data Synthesis for General Activity Recognition</h2>
-        <p class="project-intro">A generative pipeline for producing labeled radar training data across people, animals, activities, and environments—built to address the limited coverage of real-world measurements.</p>
+        <p class="eyebrow">Featured research · 01</p><h2>Physics-Guided Radar Data Synthesis</h2>
+        <p class="project-intro">A differentiable simulation pipeline that generates targeted radar training data for activity recognition across subjects, activities, and environments.</p>
         <ul class="project-points"><li>Generate controllable subject motion and behavior from text prompts.</li><li>Place motion in sensor-agnostic RF scenes and simulate signals with RFDT, a physically based differentiable RF ray tracer.</li><li>Scale toward a million-example labeled corpus and use simulator gradients to emphasize configurations where the recognition model struggles.</li><li>Combine synthetic data with real human and pet radar measurements for general activity recognition beyond fall detection.</li></ul>
         <div class="card-meta"><span>Generative models</span><span>Differentiable simulation</span><span>Radar sensing</span><span>PyTorch</span></div>
       </div>
@@ -31,14 +31,24 @@
 
     <section class="section-shell project-detail reveal" id="graphics-rf">
       <div class="project-detail-copy">
-        <p class="eyebrow">Featured research · 02</p><h2>Physically Grounded Graphics-to-RF Material Translation</h2>
-        <p class="project-intro">A shared material representation that connects how an object looks to how it responds to RF, allowing reusable graphics assets to become simulation-ready RF assets.</p>
+        <p class="eyebrow">Featured research · 02</p><h2>Inferring RF Material Properties from Graphics</h2>
+        <p class="project-intro">A material-learning framework that estimates how objects respond to RF from widely available graphics assets, while preserving uncertainty in the mapping.</p>
         <ul class="project-points"><li>Generate paired optical renderings and RF simulations with consistent geometry and physical material state.</li><li>Study which parts of PBR appearance constrain RF behavior and where the mapping remains ambiguous.</li><li>Predict frequency-dependent permittivity, effective conductivity, and calibrated uncertainty from graphics assets.</li><li>Reduce the need to measure the RF response of every new object before using it in simulation.</li></ul>
         <div class="card-meta"><span>PBR materials</span><span>Multimodal learning</span><span>Uncertainty</span><span>RF simulation</span></div>
       </div>
       <figure class="project-figure"><img src="assets/research/rfdt-studio.png" alt="RF Digital Twin Studio interface showing a 3D object and material properties"><figcaption>RF Digital Twin Studio represents visual and RF material properties in the same scene workflow.</figcaption></figure>
       <div class="pipeline" aria-label="Graphics to RF pipeline"><span>Graphics asset</span><i>→</i><span>PBR appearance</span><i>→</i><span>Shared material model</span><i>→</i><span>ε(f), σ(f)</span><i>→</i><span>RF-ready asset</span></div>
     </section>
+
+    <section class="outputs-section" id="publications"><div class="section-shell section-block">
+      <div class="section-heading reveal"><div><p class="eyebrow">Scholarly work</p><h2>Publications &amp; Presentations</h2></div><p>A conference publication and selected research presentations.</p></div>
+      <div class="publication-list">
+        <article class="publication-row reveal"><span class="pub-code">C1</span><div><h3>Differentiable Radio Frequency Digital Twin</h3><p>Xingyu Chen, <strong>Wenxuan Guo</strong>, Xinyu Zhang · ACM MobiCom 2026 · Demo Track</p></div><span class="pub-kind">Conference</span></article>
+        <article class="publication-row reveal"><span class="pub-code">P3</span><div><h3>Generative Radar Data Synthesis for Human–Animal Disambiguation</h3><p><strong>Wenxuan Guo</strong>, Xingyu Chen, Xinyu Zhang · Amazon Hardware Organization Academic Innovation Partnership Poster Event · Oct 2026</p></div><span class="pub-kind">Poster</span></article>
+        <article class="publication-row reveal"><span class="pub-code">P2</span><div><h3>RF Simulation for Animal Sensing</h3><p><strong>Wenxuan Guo</strong>, Xingyu Chen, Xinyu Zhang · CWC Annual Research Review, UC San Diego · Oct 2026</p></div><span class="pub-kind">Poster</span></article>
+        <article class="publication-row reveal"><span class="pub-code">P1</span><div><h3>Improving Proof Learning with Proof Blocks</h3><p><strong>Wenxuan Guo</strong>, Cyrus Omar · CSE Undergraduate Research Symposium, University of Michigan · Apr 2025</p></div><span class="pub-kind">Poster</span></article>
+      </div>
+    </div></section>
 
     <section class="section-shell section-block" id="other-projects">
       <div class="section-heading reveal"><div><p class="eyebrow">Other projects</p><h2>Systems &amp; Learning Tools</h2></div></div>
@@ -58,16 +68,8 @@
       </div>
     </section>
 
-    <section class="outputs-section" id="outputs"><div class="section-shell section-block">
-      <div class="section-heading reveal"><div><p class="eyebrow">Selected outputs</p><h2>Posters &amp; Demos</h2></div><p>Public listings from my current CV. Files are linked only when they are cleared for public sharing.</p></div>
-      <div class="publication-list">
-        <article class="publication-row reveal"><span class="pub-code">D1</span><div><h3>Demo: Differentiable Radio Frequency Digital Twin</h3><p>Xingyu Chen, <strong>Wenxuan Guo</strong>, Xinyu Zhang · ACM MobiCom Demo 2026</p></div><span class="pub-kind">Demo</span></article>
-        <article class="publication-row reveal"><span class="pub-code">P3</span><div><h3>Generative Radar Data Synthesis for Human–Animal Disambiguation</h3><p><strong>Wenxuan Guo</strong>, Xingyu Chen, Xinyu Zhang · Amazon Hardware Organization Academic Innovation Partnership Poster Event · Oct 2026</p></div><span class="pub-kind">Poster</span></article>
-        <article class="publication-row reveal"><span class="pub-code">P2</span><div><h3>RF Simulation for Animal Sensing</h3><p><strong>Wenxuan Guo</strong>, Xingyu Chen, Xinyu Zhang · CWC Annual Research Review, UC San Diego · Oct 2026</p></div><span class="pub-kind">Poster</span></article>
-        <article class="publication-row reveal"><span class="pub-code">P1</span><div><h3>Improving Proof Learning with Proof Blocks</h3><p><strong>Wenxuan Guo</strong>, Cyrus Omar · CSE Undergraduate Research Symposium, University of Michigan · Apr 2025</p></div><span class="pub-kind">Poster</span></article>
-      </div>
-    </div></section>
+
   </main>
-  <footer class="site-footer"><div class="section-shell footer-row"><p>© <span data-year></span> Wenxuan Guo</p><a href="mailto:w9guo@ucsd.edu">w9guo@ucsd.edu</a></div></footer>
+  <footer class="site-footer"><div class="section-shell footer-row"><p>© <span data-year></span> Wenxuan Guo</p></div></footer>
 </body>
 </html>
