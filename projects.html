@@ -1,152 +1,73 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>Projects</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research and engineering projects by Wenxuan Guo in RF simulation, sensing, and AI systems.">
+  <title>Projects · Wenxuan Guo</title>
+  <link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
 </head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="nav-shell" aria-label="Primary navigation"><a class="wordmark" href="index.html" aria-label="Wenxuan Guo home">WG<span class="wordmark-dot">.</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button><div class="nav-links" id="nav-links"><a href="index.html">Home</a><a class="active" href="projects.html">Projects</a><a href="about.html">About</a><a href="assets/Wenxuan_Guo_CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a></div></nav></header>
+  <main id="main">
+    <section class="page-hero section-shell reveal">
+      <p class="eyebrow">Research &amp; engineering</p>
+      <h1>Projects that connect <em>models</em> to the physical world.</h1>
+      <p>My current work centers on physically faithful RF simulation, controllable synthetic data, and the systems needed to turn research ideas into usable tools.</p>
+      <div class="anchor-nav" aria-label="Project sections"><a href="#radar-synthesis">Radar synthesis</a><a href="#graphics-rf">Graphics-to-RF</a><a href="#other-projects">Other projects</a><a href="#outputs">Outputs</a></div>
+    </section>
 
-<body class="projects-page">
+    <section class="section-shell project-detail project-detail-dark reveal" id="radar-synthesis">
+      <div class="project-detail-copy">
+        <p class="eyebrow">Featured research · 01</p><h2>Physics-Based Radar Data Synthesis for General Activity Recognition</h2>
+        <p class="project-intro">A generative pipeline for producing labeled radar training data across people, animals, activities, and environments—built to address the limited coverage of real-world measurements.</p>
+        <ul class="project-points"><li>Generate controllable subject motion and behavior from text prompts.</li><li>Place motion in sensor-agnostic RF scenes and simulate signals with RFDT, a physically based differentiable RF ray tracer.</li><li>Scale toward a million-example labeled corpus and use simulator gradients to emphasize configurations where the recognition model struggles.</li><li>Combine synthetic data with real human and pet radar measurements for general activity recognition beyond fall detection.</li></ul>
+        <div class="card-meta"><span>Generative models</span><span>Differentiable simulation</span><span>Radar sensing</span><span>PyTorch</span></div>
+      </div>
+      <figure class="project-figure"><img src="assets/research/radar-scene.png" alt="A virtual indoor scene with a radar sensor tracing rays toward an animal model"><figcaption>Virtual RF scene used to turn motion and geometry into simulated radar observations.</figcaption></figure>
+      <div class="pipeline" aria-label="Radar synthesis pipeline"><span>Prompted behavior</span><i>→</i><span>3D subject motion</span><i>→</i><span>RF scene</span><i>→</i><span>RFDT simulation</span><i>→</i><span>Labeled radar data</span></div>
+    </section>
 
-<!-- ===== SIDEBAR ===== -->
-<div class="sidebar">
-<a href="#animal">Animal Motion</a>
-<a href="#radiation">Radiation ML</a>
-<a href="#rag">RAG System</a>
-<a href="#pl">PrairieLearn</a>
-</div>
+    <section class="section-shell project-detail reveal" id="graphics-rf">
+      <div class="project-detail-copy">
+        <p class="eyebrow">Featured research · 02</p><h2>Physically Grounded Graphics-to-RF Material Translation</h2>
+        <p class="project-intro">A shared material representation that connects how an object looks to how it responds to RF, allowing reusable graphics assets to become simulation-ready RF assets.</p>
+        <ul class="project-points"><li>Generate paired optical renderings and RF simulations with consistent geometry and physical material state.</li><li>Study which parts of PBR appearance constrain RF behavior and where the mapping remains ambiguous.</li><li>Predict frequency-dependent permittivity, effective conductivity, and calibrated uncertainty from graphics assets.</li><li>Reduce the need to measure the RF response of every new object before using it in simulation.</li></ul>
+        <div class="card-meta"><span>PBR materials</span><span>Multimodal learning</span><span>Uncertainty</span><span>RF simulation</span></div>
+      </div>
+      <figure class="project-figure"><img src="assets/research/rfdt-studio.png" alt="RF Digital Twin Studio interface showing a 3D object and material properties"><figcaption>RF Digital Twin Studio represents visual and RF material properties in the same scene workflow.</figcaption></figure>
+      <div class="pipeline" aria-label="Graphics to RF pipeline"><span>Graphics asset</span><i>→</i><span>PBR appearance</span><i>→</i><span>Shared material model</span><i>→</i><span>ε(f), σ(f)</span><i>→</i><span>RF-ready asset</span></div>
+    </section>
 
-<nav>
-<h2>Wenxuan Guo</h2>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="resume.html">Resume</a></li>
-</ul>
-</nav>
+    <section class="section-shell section-block" id="other-projects">
+      <div class="section-heading reveal"><div><p class="eyebrow">Other projects</p><h2>Research infrastructure &amp; learning tools.</h2></div></div>
+      <div class="other-projects-grid">
+        <article class="other-project reveal">
+          <div class="other-project-mark"><img src="assets/cwc-logo.jpg" alt="Center for Wireless Communications logo"></div><p class="card-kicker">UC San Diego · 2026—Present</p><h3>CWC Faculty Intelligence WebHub</h3>
+          <p>Built and deployed an evidence-backed faculty intelligence system that turns a roster into searchable profiles, monthly activity digests, and collaboration recommendations for 20+ CWC faculty.</p>
+          <ul><li>Multi-source acquisition with identity checks, caching, deduplication, and traceable evidence bundles.</li><li>LLM-generated summaries and themes with unsupported-claim validation and deterministic fallbacks.</li><li>Encrypted login, admin feedback loop, and automated monthly refresh through GitHub Actions.</li></ul>
+          <div class="card-meta"><span>Python</span><span>REST APIs</span><span>Claude API</span><span>GitHub Actions</span></div>
+        </article>
+        <article class="other-project reveal">
+          <div class="proof-mark" aria-hidden="true"><span>Assumption</span><span>Lemma</span><span>Therefore</span></div><p class="card-kicker">University of Michigan · 2024—2025</p><h3>PrairieLearn Proof Feedback Engine</h3>
+          <p>Designed and merged an ordering-feedback engine for Proof Blocks, giving students targeted feedback that helps them locate mistakes in proof structure.</p>
+          <ul><li>Led the work across faculty, PrairieLearn developers, and the Proof Blocks founder.</li><li>Built a prototype Discrete Math course and department-specific onboarding guide.</li><li>Deployed the system for 800+ students and reduced manual grading overhead.</li></ul>
+          <div class="card-meta"><span>PrairieLearn</span><span>Mustache.js</span><span>Product design</span><span>Education</span></div>
+        </article>
+      </div>
+    </section>
 
-<section>
-
-<h1>Projects</h1>
-
-<div class="projects-grid">
-
-<!-- ===== PROJECT 1 ===== -->
-<div class="project" id="animal">
-
-<h2>Synthetic Animal Motion Generation</h2>
-
-<p>
-Developed an end-to-end system that reconstructs realistic 3D quadruped motion from monocular video, addressing the lack of scalable motion datasets for simulation and radar-based learning. The pipeline converts raw video into structured joint trajectories by combining segmentation, skeleton extraction, and SMAL model fitting, enabling consistent motion reconstruction across time.
-</p>
-
-<p>
-The system processes video frames to extract silhouettes and structural representations, followed by keypoint estimation and parametric model fitting. The resulting motion is exported into a Unity-based animation system, where it can be replayed, controlled, and extended. This creates a full pipeline that bridges perception, modeling, and simulation.
-</p>
-
-<p>
-This approach enables scalable generation of synthetic motion datasets with higher diversity and controllability than real-world capture, making it valuable for training machine learning systems that depend on structured motion data.
-</p>
-
-<p><b>Tech:</b> Python, PyTorch, OpenCV, Unity, SMAL</p>
-
-<!-- Diagram -->
-<div class="diagram">
-Video → Segmentation → Skeleton → Keypoints → SMAL → 3D Motion → Unity
-</div>
-
-<video controls>
-<source src="assets/motion_demo.mp4" type="video/mp4">
-</video>
-
-</div>
-
-<!-- ===== PROJECT 2 ===== -->
-<div class="project" id="radiation">
-
-<h2>Radiation Signal Classification</h2>
-
-<p>
-Built a real-time machine learning system for classifying gamma-ray waveforms using a convolutional neural network with uncertainty calibration. The system improves signal detection in noisy environments and provides reliable predictions even in ambiguous scenarios.
-</p>
-
-<p>
-The model learns temporal patterns from waveform data and incorporates Bayesian uncertainty estimation to improve robustness. The pipeline is optimized for low-latency inference, enabling continuous real-time processing of streaming signals.
-</p>
-
-<p>
-Integrated with Unity and deployed to HoloLens, the system visualizes radiation signals in an interactive 3D environment, allowing users to intuitively explore signal patterns and spatial distributions.
-</p>
-
-<p><b>Tech:</b> PyTorch, Unity, HoloLens, C#</p>
-
-<div class="diagram">
-Waveform → CNN → Classification + Uncertainty → Unity → AR Visualization
-</div>
-
-<img src="assets/radiation_demo.png">
-
-</div>
-
-<!-- ===== PROJECT 3 ===== -->
-<div class="project" id="rag">
-
-<h2>AI Portfolio Knowledge Base</h2>
-
-<p>
-Designed a retrieval-augmented generation system that transforms static documents into a structured, queryable knowledge base. The system enables semantic search and context-aware response generation for technical and behavioral queries.
-</p>
-
-<p>
-Built a document ingestion pipeline with structured chunking and embedding-based retrieval using ChromaDB. Combined retrieval with LLM-based generation to produce structured and coherent responses.
-</p>
-
-<p>
-Optimized prompt design and retrieval strategies to improve response consistency and reduce hallucination, enabling reliable information access for real-world use cases such as interview preparation.
-</p>
-
-<p><b>Tech:</b> LlamaIndex, ChromaDB, Transformers</p>
-
-<div class="diagram">
-Documents → Chunking → Embeddings → Retrieval → LLM → Structured Response
-</div>
-
-<p>
-<a href="https://github.com/wendyguo2002/my_rag_project" target="_blank">
-GitHub Repository
-</a>
-</p>
-
-</div>
-
-<!-- ===== PROJECT 4 ===== -->
-<div class="project" id="pl">
-
-<h2>PrairieLearn Feedback Engine</h2>
-
-<p>
-Developed an automated feedback system for proof-block ordering problems, enabling structured and scalable evaluation of logical reasoning in large classrooms.
-</p>
-
-<p>
-The system analyzes student submissions, identifies logical ordering errors, and generates deterministic feedback based on rule-based evaluation. It provides meaningful guidance rather than simple correctness checks.
-</p>
-
-<p>
-Deployed to 800+ students, the system significantly reduced grading workload while improving learning outcomes through immediate and structured feedback.
-</p>
-
-<p><b>Tech:</b> Python, Mustache.js</p>
-
-<div class="diagram">
-Student Input → Rule Engine → Logical Analysis → Feedback Generation
-</div>
-
-</div>
-
-</div>
-
-</section>
-
+    <section class="outputs-section" id="outputs"><div class="section-shell section-block">
+      <div class="section-heading reveal"><div><p class="eyebrow">Selected outputs</p><h2>Posters &amp; demos.</h2></div><p>Public listings from my current CV. Files are linked only when they are cleared for public sharing.</p></div>
+      <div class="publication-list">
+        <article class="publication-row reveal"><span class="pub-code">D1</span><div><h3>Demo: Differentiable Radio Frequency Digital Twin</h3><p>Xingyu Chen, <strong>Wenxuan Guo</strong>, Xinyu Zhang · ACM MobiCom Demo 2026</p></div><span class="pub-kind">Demo</span></article>
+        <article class="publication-row reveal"><span class="pub-code">P3</span><div><h3>Generative Radar Data Synthesis for Human–Animal Disambiguation</h3><p><strong>Wenxuan Guo</strong>, Xingyu Chen, Xinyu Zhang · Amazon Hardware Organization Academic Innovation Partnership Poster Event · Oct 2026</p></div><span class="pub-kind">Poster</span></article>
+        <article class="publication-row reveal"><span class="pub-code">P2</span><div><h3>RF Simulation for Animal Sensing</h3><p><strong>Wenxuan Guo</strong>, Xingyu Chen, Xinyu Zhang · CWC Annual Research Review, UC San Diego · Oct 2026</p></div><span class="pub-kind">Poster</span></article>
+        <article class="publication-row reveal"><span class="pub-code">P1</span><div><h3>Improving Proof Learning with Proof Blocks</h3><p><strong>Wenxuan Guo</strong>, Cyrus Omar · CSE Undergraduate Research Symposium, University of Michigan · Apr 2025</p></div><span class="pub-kind">Poster</span></article>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="section-shell footer-row"><p>© <span data-year></span> Wenxuan Guo</p><a href="mailto:w9guo@ucsd.edu">w9guo@ucsd.edu</a></div></footer>
 </body>
 </html>

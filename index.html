@@ -1,75 +1,93 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>Wenxuan Guo</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wenxuan Guo researches physically grounded simulation and machine learning for RF sensing at UC San Diego.">
+  <title>Wenxuan Guo · RF Sensing &amp; Simulation</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="wordmark" href="index.html" aria-label="Wenxuan Guo home">WG<span class="wordmark-dot">.</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="assets/Wenxuan_Guo_CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
 
-<nav>
-<h2>Wenxuan Guo</h2>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="resume.html">Resume</a></li>
-</ul>
-</nav>
+  <main id="main">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="status-dot"></span> UC San Diego · M.S. Computer Science</p>
+        <h1>Building physically grounded learning systems for <em>sensing.</em></h1>
+        <p class="hero-lede">I develop RF simulation and physics-guided data synthesis methods that help sensing models transfer from virtual scenes to the real world.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="projects.html">Explore research <span aria-hidden="true">→</span></a>
+          <a class="button button-ghost" href="assets/Wenxuan_Guo_CV.pdf" target="_blank" rel="noopener">View CV</a>
+        </div>
+        <div class="social-row" aria-label="External profiles">
+          <a href="https://github.com/wendyguo2002" target="_blank" rel="noopener">GitHub</a><span>·</span>
+          <a href="https://www.linkedin.com/in/wenxuan-guo-a4ba72265/" target="_blank" rel="noopener">LinkedIn</a><span>·</span>
+          <a href="mailto:w9guo@ucsd.edu">Email</a>
+        </div>
+      </div>
+      <div class="portrait-wrap reveal" aria-label="Portrait of Wenxuan Guo">
+        <div class="portrait-orbit orbit-one"></div><div class="portrait-orbit orbit-two"></div>
+        <img class="portrait" src="assets/profile-professional.jpg" alt="Wenxuan Guo, computer science researcher">
+        <div class="focus-card"><span>Research focus</span><strong>Simulation × RF sensing × ML</strong></div>
+      </div>
+    </section>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
+    <section class="signal-strip" aria-label="Research areas"><div class="section-shell signal-row"><span>Physics-based simulation</span><span>Generative data synthesis</span><span>Real-world sensing</span></div></section>
 
-<!-- Optional profile photo -->
-<img src="assets/profile.jpg" class="profile">
+    <section class="section-shell section-block" id="research">
+      <div class="section-heading reveal"><div><p class="eyebrow">Selected research</p><h2>From virtual physics to real signals.</h2></div><p>Two connected directions at UC San Diego: scaling labeled radar data and making graphics assets physically meaningful to RF simulators.</p></div>
+      <div class="featured-grid">
+        <a class="feature-card feature-card-dark reveal" href="projects.html#radar-synthesis">
+          <div class="feature-index">01</div>
+          <div class="feature-visual radar-visual" aria-hidden="true"><div class="radar-origin"></div><div class="radar-ray ray-a"></div><div class="radar-ray ray-b"></div><div class="radar-ray ray-c"></div><div class="radar-target">activity</div></div>
+          <p class="card-kicker">With Amazon Lab126</p><h3>Physics-Based Radar Data Synthesis</h3>
+          <p>Generating controllable human and animal activity, placing it in RF scenes, and simulating labeled radar signals with a differentiable RF digital twin.</p>
+          <div class="card-meta"><span>Generative motion</span><span>RFDT</span><span>Sim-to-real</span></div><span class="card-link">Read project <span aria-hidden="true">↗</span></span>
+        </a>
+        <a class="feature-card feature-card-light reveal" href="projects.html#graphics-rf">
+          <div class="feature-index">02</div>
+          <div class="material-swatch" aria-hidden="true"><span style="--swatch:#d7c2a5"></span><span style="--swatch:#7b8179"></span><span style="--swatch:#b45d3e"></span><div class="material-arrow">→</div><div class="rf-label">ε · σ · uncertainty</div></div>
+          <p class="card-kicker">Physical material modeling</p><h3>Graphics-to-RF Material Translation</h3>
+          <p>Learning how visible PBR appearance constrains frequency-dependent permittivity and conductivity, while representing the ambiguity that remains.</p>
+          <div class="card-meta"><span>PBR</span><span>Multimodal learning</span><span>Materials</span></div><span class="card-link">Read project <span aria-hidden="true">↗</span></span>
+        </a>
+      </div>
+    </section>
 
-<h1>Machine Learning Engineer</h1>
+    <section class="section-shell section-block experience-section">
+      <div class="section-heading compact reveal"><div><p class="eyebrow">Featured experience</p><h2>Currently in San Diego.</h2></div></div>
+      <div class="experience-list">
+        <article class="experience-row reveal"><p class="experience-date">Jan 2026 — Present</p><div><h3>ML Research Assistant</h3><p>UC San Diego · Electrical &amp; Computer Engineering</p></div><p class="experience-detail">Physics-based radar synthesis and graphics-to-RF material translation with Prof. Xinyu Zhang.</p></article>
+        <article class="experience-row reveal"><p class="experience-date">Jun 2026 — Present</p><div><h3>AI/ML Engineer</h3><p>UC San Diego · Center for Wireless Communications</p></div><p class="experience-detail">An evidence-backed faculty intelligence pipeline, searchable WebHub, activity digests, and collaboration discovery.</p></article>
+      </div>
+    </section>
 
-<p>
-MS Computer Science @ UC San Diego. I build machine learning systems that connect perception, simulation, and real-world applications, with a focus on 3D motion reconstruction and intelligent data pipelines.
-</p>
+    <section class="outputs-section"><div class="section-shell section-block">
+      <div class="section-heading reveal"><div><p class="eyebrow">Posters &amp; demos</p><h2>Research, made tangible.</h2></div><a class="text-link" href="projects.html#outputs">View all outputs <span aria-hidden="true">→</span></a></div>
+      <div class="output-grid">
+        <article class="output-card reveal"><span class="output-type">Demo · 2026</span><h3>Differentiable Radio Frequency Digital Twin</h3><p>ACM MobiCom Demo</p></article>
+        <article class="output-card reveal"><span class="output-type">Poster · Oct 2026</span><h3>Generative Radar Data Synthesis for Human–Animal Disambiguation</h3><p>Amazon Hardware Organization Academic Innovation Partnership</p></article>
+        <article class="output-card reveal"><span class="output-type">Poster · Oct 2026</span><h3>RF Simulation for Animal Sensing</h3><p>2026 CWC Annual Research Review · UC San Diego</p></article>
+        <article class="output-card reveal"><span class="output-type">Poster · Apr 2025</span><h3>Improving Proof Learning with Proof Blocks</h3><p>CSE Undergraduate Research Symposium · University of Michigan</p></article>
+      </div>
+    </div></section>
 
-<p>
-<a href="https://github.com/wendyguo2002" target="_blank">GitHub</a> |
-<a href="https://www.linkedin.com/in/wenxuan-guo-a4ba72265/" target="_blank">LinkedIn</a>
-</p>
-
-<a class="button" href="projects.html">View Projects</a>
-
-</section>
-
-<!-- ===== FEATURED PROJECTS ===== -->
-<section class="featured">
-
-<h2>Featured Projects</h2>
-
-<!-- Project 1 -->
-<a href="projects.html#animal" class="project-link">
-<div class="project">
-
-<h3>Synthetic Animal Motion Generation</h3>
-
-<p>
-Built an end-to-end pipeline to reconstruct 3D quadruped motion from video using segmentation, skeletonization, and SMAL model fitting. The system transforms raw video into structured joint trajectories for simulation and analysis. Integrated the motion into a Unity-based animation system to generate realistic synthetic data for radar training.
-</p>
-
-</div>
-</a>
-
-<!-- Project 2 -->
-<a href="projects.html#radiation" class="project-link">
-<div class="project">
-
-<h3>Radiation Signal Classification</h3>
-
-<p>
-Developed a real-time machine learning system for classifying gamma-ray waveforms using a CNN with uncertainty calibration. Engineered temporal features and optimized inference to achieve low-latency streaming performance. Integrated the model with Unity and HoloLens to visualize radiation signals in an interactive 3D environment.
-</p>
-
-</div>
-</a>
-
-</section>
-
+    <section class="section-shell contact-band reveal"><p class="eyebrow">Let’s connect</p><h2>Interested in simulation, sensing, or research systems?</h2><a class="button button-primary" href="mailto:w9guo@ucsd.edu">w9guo@ucsd.edu <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="site-footer"><div class="section-shell footer-row"><p>© <span data-year></span> Wenxuan Guo</p><p>San Diego, California</p></div></footer>
 </body>
 </html>
