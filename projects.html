@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Research and engineering projects by Wenxuan Guo in RF simulation, sensing, and AI systems.">
   <title>Projects · Wenxuan Guo</title>
-  <link rel="stylesheet" href="style.css?v=20261022-4"><script src="script.js?v=20261022-4" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261022-5"><script src="script.js?v=20261022-5" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -15,7 +15,7 @@
       <p class="eyebrow">Research &amp; engineering</p>
       <h1>Research &amp; Projects</h1>
       <p>Current research in RF simulation and synthetic data, together with selected systems and learning-tool projects.</p>
-      <div class="anchor-nav" aria-label="Project sections"><a href="#radar-synthesis">Radar data synthesis</a><a href="#graphics-rf">RF materials</a><a href="#publications">Publications &amp; presentations</a><a href="#other-projects">Other projects</a></div>
+      <div class="anchor-nav" aria-label="Project sections"><a href="#radar-synthesis">Radar data synthesis</a><a href="#graphics-rf">RF materials</a><a href="#publications">Publications &amp; presentations</a><a href="#other-projects">CWC WebHub</a></div>
     </section>
 
     <section class="section-shell project-detail project-detail-dark reveal" id="radar-synthesis">
@@ -25,8 +25,10 @@
         <ul class="project-points"><li>Generate controllable subject motion and behavior from text prompts.</li><li>Place motion in sensor-agnostic RF scenes and simulate signals with RFDT, a physically based differentiable RF ray tracer.</li><li>Scale toward a million-example labeled corpus and use simulator gradients to emphasize configurations where the recognition model struggles.</li><li>Combine synthetic data with real human and pet radar measurements for general activity recognition beyond fall detection.</li></ul>
         <div class="card-meta"><span>Generative models</span><span>Differentiable simulation</span><span>Radar sensing</span><span>PyTorch</span></div>
       </div>
-      <figure class="project-figure"><img src="assets/research/radar-scene.png" alt="A virtual indoor scene with a radar sensor tracing rays toward an animal model"><figcaption>Virtual RF scene used to turn motion and geometry into simulated radar observations.</figcaption></figure>
-      <div class="pipeline" aria-label="Radar synthesis pipeline"><span>Prompted behavior</span><i>→</i><span>3D subject motion</span><i>→</i><span>RF scene</span><i>→</i><span>RFDT simulation</span><i>→</i><span>Labeled radar data</span></div>
+      <div class="project-gallery project-gallery-two">
+        <figure class="project-figure"><img src="assets/research/radar-synthesis-overview.png" alt="Overview of the animal motion generation and radar synthesis research workflow"><figcaption>From generated animal behavior to a labeled synthetic radar sample.</figcaption></figure>
+        <figure class="project-figure"><img src="assets/research/radar-scene-variety.png" alt="Four simulated radar environments: home, office, hospital, and factory"><figcaption>Controllable RF scenes across varied indoor environments.</figcaption></figure>
+      </div>
     </section>
 
     <section class="section-shell project-detail reveal" id="graphics-rf">
@@ -36,8 +38,7 @@
         <ul class="project-points"><li>Generate paired optical renderings and RF simulations with consistent geometry and physical material state.</li><li>Study which parts of PBR appearance constrain RF behavior and where the mapping remains ambiguous.</li><li>Predict frequency-dependent permittivity, effective conductivity, and calibrated uncertainty from graphics assets.</li><li>Reduce the need to measure the RF response of every new object before using it in simulation.</li></ul>
         <div class="card-meta"><span>PBR materials</span><span>Multimodal learning</span><span>Uncertainty</span><span>RF simulation</span></div>
       </div>
-      <figure class="project-figure"><img src="assets/research/rfdt-studio.png" alt="RF Digital Twin Studio interface showing a 3D object and material properties"><figcaption>RF Digital Twin Studio represents visual and RF material properties in the same scene workflow.</figcaption></figure>
-      <div class="pipeline" aria-label="Graphics to RF pipeline"><span>Graphics asset</span><i>→</i><span>PBR appearance</span><i>→</i><span>Shared material model</span><i>→</i><span>ε(f), σ(f)</span><i>→</i><span>RF-ready asset</span></div>
+      <figure class="project-figure material-figure"><img src="assets/research/material-frequency-schematic.png" alt="Schematic connecting crystal structure to radio-frequency and visible-light material properties"><figcaption>RF and optical properties originate from the same underlying material structure across different frequency regimes.</figcaption></figure>
     </section>
 
     <section class="outputs-section" id="publications"><div class="section-shell section-block">
@@ -51,21 +52,14 @@
     </div></section>
 
     <section class="section-shell section-block" id="other-projects">
-      <div class="section-heading reveal"><div><p class="eyebrow">Other projects</p><h2>Systems &amp; Learning Tools</h2></div></div>
-      <div class="other-projects-grid">
-        <article class="other-project reveal">
-          <div class="other-project-mark"><img src="assets/cwc-logo.jpg" alt="Center for Wireless Communications logo"></div><p class="card-kicker">UC San Diego · 2026—Present</p><h3>CWC Faculty Intelligence WebHub</h3>
-          <p>Built and deployed an evidence-backed faculty intelligence system that turns a roster into searchable profiles, monthly activity digests, and collaboration recommendations for 20+ CWC faculty.</p>
-          <ul><li>Multi-source acquisition with identity checks, caching, deduplication, and traceable evidence bundles.</li><li>LLM-generated summaries and themes with unsupported-claim validation and deterministic fallbacks.</li><li>Encrypted login, admin feedback loop, and automated monthly refresh through GitHub Actions.</li></ul>
-          <div class="card-meta"><span>Python</span><span>REST APIs</span><span>Claude API</span><span>GitHub Actions</span></div>
-        </article>
-        <article class="other-project reveal">
-          <div class="proof-mark" aria-hidden="true"><span>Assumption</span><span>Lemma</span><span>Therefore</span></div><p class="card-kicker">University of Michigan · 2024—2025</p><h3>PrairieLearn Proof Feedback Engine</h3>
-          <p>Designed and merged an ordering-feedback engine for Proof Blocks, giving students targeted feedback that helps them locate mistakes in proof structure.</p>
-          <ul><li>Led the work across faculty, PrairieLearn developers, and the Proof Blocks founder.</li><li>Built a prototype Discrete Math course and department-specific onboarding guide.</li><li>Deployed the system for 800+ students and reduced manual grading overhead.</li></ul>
-          <div class="card-meta"><span>PrairieLearn</span><span>Mustache.js</span><span>Product design</span><span>Education</span></div>
-        </article>
-      </div>
+      <div class="section-heading reveal"><div><p class="eyebrow">Selected project</p><h2>CWC Faculty Intelligence WebHub</h2></div></div>
+      <article class="other-project other-project-featured reveal">
+        <img class="other-project-illustration" src="assets/research/cwc-webhub-illustration.jpg" alt="Illustration of a searchable academic faculty and collaboration network">
+        <div><p class="card-kicker">UC San Diego · 2026—Present</p><h3>Research information, made useful.</h3>
+        <p>Built and deployed an evidence-backed faculty intelligence system that turns a roster into searchable profiles, monthly activity digests, and collaboration recommendations for 20+ CWC faculty.</p>
+        <ul><li>Multi-source acquisition with identity checks, caching, deduplication, and traceable evidence bundles.</li><li>LLM-generated summaries and themes with unsupported-claim validation and deterministic fallbacks.</li><li>Encrypted login, admin feedback loop, and automated monthly refresh through GitHub Actions.</li></ul>
+        <div class="card-meta"><span>Python</span><span>REST APIs</span><span>Claude API</span><span>GitHub Actions</span></div></div>
+      </article>
     </section>
 
 
