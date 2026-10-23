@@ -16,9 +16,9 @@ document.querySelectorAll('[data-year]').forEach((node) => {
 const typewriter = document.querySelector('[data-typewriter]');
 if (typewriter && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const phrases = [
-    'high-fidelity simulation.',
-    'physics-guided learning.',
-    'targeted data synthesis.'
+    'physical simulation.',
+    'synthetic data.',
+    'sensing systems.'
   ];
   let phraseIndex = 0;
   let charIndex = phrases[0].length;
